@@ -1,0 +1,47 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import settings.Common;
+
+public class LoginPage {
+	
+	public static WebDriver driver;
+	
+	@FindBy(id="sso_username")
+	private static WebElement usernameField;
+	
+	@FindBy(id="sso_password")
+	private static WebElement passwordField;
+	
+	@FindBy(id="sso_submit")
+	private static WebElement submitBtn;
+
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(this.driver, this);
+	}
+	
+	public boolean isUserOnLoginPage(){
+		return Common.isElementDisplayed(usernameField);
+	}
+
+	public void enterUsername() {
+		Common.sendInput(usernameField, "kumarp12");
+	}
+
+	public void enterPassword() {
+		Common.sendInput(passwordField, "nyuqa@123");
+	}
+	
+	public void tapSubmitBtn(){
+		Common.explicitWait_Clickable(submitBtn, 60).click();
+	}
+	
+}
+
+
+}

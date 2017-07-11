@@ -1,0 +1,12 @@
+package web.stepdefs;
+
+import settings.Common;
+import utility.EncryptDecrypt;
+
+public class LoginSteps extends Common{
+
+	public static void main (String[] args) {
+		String mypassword = EncryptDecrypt.encryptPassword("Born2win!");
+		System.out.println(mypassword);
+	}
+}

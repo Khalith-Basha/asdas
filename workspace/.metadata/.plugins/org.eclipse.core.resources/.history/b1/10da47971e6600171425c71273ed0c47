@@ -1,0 +1,24 @@
+package web.stepdefs;
+
+import pages.LoginPage;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+import settings.Common;
+import utility.EncryptDecrypt;
+
+public class LoginSteps extends Common{
+
+	@Given("^User is on the Login Screen$")
+    public void user_is_on_login_screen(){
+		LoginPage.isUserOnLoginPage();
+    }
+    
+    @When("^User enters the valid credentials$")
+    public void user_login_succussfully()  {
+  	  LoginPage.enterUsername();
+  	  LoginPage.enterPassword();
+  	  LoginPage.clickOnSubmitBtn();
+    }
+	
+}

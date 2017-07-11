@@ -1,0 +1,17 @@
+package com.settings;
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+		features = "Features/web/00Login.feature"
+		,glue={"com.web.stepdefs"}
+		)
+public class RunFeatures_New {
+
+	 
+	
+}

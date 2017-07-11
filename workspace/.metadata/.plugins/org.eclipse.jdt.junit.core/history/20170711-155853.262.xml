@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RunFeatures_New" project="QBurstAutomationDemo" tests="2" started="2" failures="0" errors="3" ignored="0">
+  <testsuite name="com.settings.RunFeatures_New" time="0.002">
+    <testsuite name="Feature: Login to AUT" time="0.002">
+      <testsuite name="Scenario: Test the login functionality" time="0.002" incomplete="true">
+        <error>java.lang.NullPointerException&#13;
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:770)&#13;
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:96)&#13;
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:71)&#13;
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)&#13;
+	at com.settings.Common.explicitWait_Clickable(Common.java:46)&#13;
+	at com.settings.Common.sendInput(Common.java:19)&#13;
+	at com.pages.LoginPage.enterUsername(LoginPage.java:33)&#13;
+	at com.web.stepdefs.LoginSteps.user_login_succussfully(LoginSteps.java:20)&#13;
+	at ✽.When user login succussfully(Features/web/00Login.feature:6)&#13;
+&#13;
+java.lang.NullPointerException&#13;
+	at com.web.stepdefs.Hooks.afterMethod(Hooks.java:19)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)&#13;
+	at java.lang.reflect.Method.invoke(Unknown Source)&#13;
+	at cucumber.runtime.Utils$1.call(Utils.java:37)&#13;
+	at cucumber.runtime.Timeout.timeout(Timeout.java:13)&#13;
+	at cucumber.runtime.Utils.invoke(Utils.java:31)&#13;
+	at cucumber.runtime.java.JavaHookDefinition.execute(JavaHookDefinition.java:60)&#13;
+	at cucumber.runtime.Runtime.runHookIfTagsMatch(Runtime.java:223)&#13;
+	at cucumber.runtime.Runtime.runHooks(Runtime.java:211)&#13;
+	at cucumber.runtime.Runtime.runAfterHooks(Runtime.java:205)&#13;
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:46)&#13;
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:91)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)&#13;
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:93)&#13;
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:37)&#13;
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)&#13;
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)&#13;
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)&#13;
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)&#13;
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)&#13;
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)&#13;
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:98)&#13;
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)&#13;
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:678)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)&#13;
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)&#13;
+&#13;
+</error>
+        <testcase name="Given User is on login screen" classname="Scenario: Test the login functionality" time="0.0"/>
+        <testcase name="When user login succussfully" classname="Scenario: Test the login functionality" time="0.002">
+          <error>java.lang.NullPointerException&#13;
+	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:770)&#13;
+	at org.openqa.selenium.support.ui.FluentWait.&lt;init&gt;(FluentWait.java:96)&#13;
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:71)&#13;
+	at org.openqa.selenium.support.ui.WebDriverWait.&lt;init&gt;(WebDriverWait.java:45)&#13;
+	at com.settings.Common.explicitWait_Clickable(Common.java:46)&#13;
+	at com.settings.Common.sendInput(Common.java:19)&#13;
+	at com.pages.LoginPage.enterUsername(LoginPage.java:33)&#13;
+	at com.web.stepdefs.LoginSteps.user_login_succussfully(LoginSteps.java:20)&#13;
+	at ✽.When user login succussfully(Features/web/00Login.feature:6)&#13;
+&#13;
+</error>
+        </testcase>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

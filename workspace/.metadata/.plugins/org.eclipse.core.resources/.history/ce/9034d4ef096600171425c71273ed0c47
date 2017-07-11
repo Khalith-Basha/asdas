@@ -1,0 +1,77 @@
+package settings;
+
+import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.DefaultExecuteResultHandler;
+import org.apache.commons.exec.DefaultExecutor;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
+
+import com.github.mkolisnyk.cucumber.runner.ExtendedCucumber;
+import com.github.mkolisnyk.cucumber.runner.ExtendedCucumberOptions;
+import com.utility.PropertyUtility;
+
+import cucumber.api.CucumberOptions;
+
+@RunWith(ExtendedCucumber.class)
+@ExtendedCucumberOptions(jsonReport = "Reports/cucumber.json", jsonUsageReport = "Reports/cucumber-usage.json", detailedReport = true, detailedAggregatedReport = true, overviewReport = true, retryCount = 0, overviewChartsReport = true, featureOverviewChart = true, usageReport = true, coverageReport = true, outputFolder = "Reports/", screenShotLocation = "Screenshot/", screenShotSize = "300px", toPDF = true, pdfPageSize = "A4 landscape")
+@CucumberOptions(plugin = { "html:Reports/cucumber-html-report", "json:Reports/cucumber.json",
+		"pretty:Reports/cucumber-pretty.txt", "usage:Reports/cucumber-usage.json",
+		"junit:Reports/cucumber-results.xml" }, monochrome = true)
+public class RunFeatures {
+
+	public static WebDriver driver;
+	public static CommandLine command;
+	public static DefaultExecuteResultHandler resultHandler;
+	public static DefaultExecutor executor;
+	private static ChromeDriverService service;
+
+	public static void main(String args[]) throws Exception {
+		String product = System.getProperty("product");
+		String tag = System.getProperty("tag");
+		System.setProperty("cucumber.options",
+				"--glue com/" + product + "/stepdefs Features/" + product + " --tags " + tag + "");
+		System.setProperty("cucumber.reports.reportPrefix", PropertyUtility.getProperty("ApplicationName"));
+		JUnitCore junitRunner = new JUnitCore();
+		junitRunner.run(com.settings.RunFeatures.class);
+	}
+
+	@BeforeClass
+	public static void driverSetup() throws Throwable {
+
+		switch (System.getProperty("browser")) {
+		case "safari":
+			driver = new SafariDriver();
+			break;
+
+		case "firefox":
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/geckodriver");
+			driver = new FirefoxDriver();
+			break;
+
+		case "chrome":
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver");
+			driver = new ChromeDriver();
+			break;
+
+		default:
+			break;
+		}
+
+		driver.get("https://central.nyumc.org");
+		Common.simpleWait(5000);
+
+	}
+
+	@AfterClass
+	public static void tearDown() throws Exception {
+		// driver.quit();
+	}
+
+}

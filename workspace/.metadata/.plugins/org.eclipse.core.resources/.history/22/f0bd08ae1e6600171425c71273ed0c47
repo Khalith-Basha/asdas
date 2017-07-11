@@ -1,0 +1,7 @@
+@Regression
+Feature: Login to Portal
+
+Scenario: Test the login functionality
+Given: User is on s Login Screen
+When: User enters the valid credentials
+Then: User login is successful

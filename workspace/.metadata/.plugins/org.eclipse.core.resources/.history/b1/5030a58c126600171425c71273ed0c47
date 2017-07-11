@@ -1,0 +1,17 @@
+package utility;
+
+import org.apache.commons.codec.binary.Base64;
+
+public class EncryptDecrypt {
+
+	/**
+	 * this method will encrypt a given string
+	 * @param password - String to be encrypted
+	 * @return - returns a new encrypted string
+	 */
+	public static String encryptPassword(String password) {
+		byte[] encodedPwdBytes = Base64.encodeBase64(password.getBytes());
+		return new String (encodedPwdBytes);
+		
+	}
+}

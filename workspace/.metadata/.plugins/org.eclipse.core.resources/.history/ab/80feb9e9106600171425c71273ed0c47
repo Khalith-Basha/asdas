@@ -1,0 +1,6 @@
+package utility;
+
+public class Encrypt {
+
+	public static String encrypt
+}
